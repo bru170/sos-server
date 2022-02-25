@@ -5,12 +5,24 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     postText: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false
     },
     username: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    author: {
+      type: DataTypes.STRING(1234),
+      allowNull: false
+    },
+    featureImage: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    image: {
+      type: DataTypes.STRING,
+      allowNull: true
     }
   })
   return Posts
