@@ -7,10 +7,18 @@ router.get("/", async (request, response) => {
   response.json(allPosts)
 })
 
+router.get("/featuredPosts", async (request, response) => {
+  const featuredPosts = await Posts.findAll({
+    limit: 3,
+    order: [["createdAt", "DESC"]]
+  })
+  response.json(featuredPosts)
+})
+
 router.post("/", async (request, response) => {
-  const post = request.body
-  await Posts.create(post)
-  response.json(post)
+  const createPost = request.body
+  await Posts.create(createPost)
+  response.json(createPost)
 })
 
 module.exports = router

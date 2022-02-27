@@ -4,16 +4,16 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-    jobTitle: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
     workPlace: {
       type: DataTypes.STRING,
       allowNull: false
     },
     email: {
       type: DataTypes.TEXT,
+      allowNull: false
+    },
+    bioText: {
+      type: DataTypes.STRING,
       allowNull: false
     },
     image: {
