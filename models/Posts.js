@@ -17,11 +17,11 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     featureImage: {
-      type: DataTypes.STRING,
+      type: DataTypes.BLOB,
       allowNull: true
     },
     image: {
-      type: DataTypes.STRING,
+      type: DataTypes.BLOB,
       allowNull: true
     }
   })
