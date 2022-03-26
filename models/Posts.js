@@ -16,12 +16,28 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING(1234),
       allowNull: false
     },
+    categories: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    tags: {
+      type: DataTypes.STRING(1234),
+      allowNull: false
+    },
     featureImage: {
       type: DataTypes.BLOB,
       allowNull: true
     },
+    featureImageAltText: {
+      type: DataTypes.STRING(1234),
+      allowNull: true
+    },
     image: {
       type: DataTypes.BLOB,
+      allowNull: true
+    },
+    imageAltText: {
+      type: DataTypes.STRING(1234),
       allowNull: true
     }
   })

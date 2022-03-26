@@ -19,6 +19,10 @@ module.exports = (sequelize, DataTypes) => {
     image: {
       type: DataTypes.BLOB,
       allowNull: true
+    },
+    altText: {
+      type: DataTypes.STRING,
+      allowNull: true
     }
   })
   return People
