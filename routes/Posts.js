@@ -7,6 +7,12 @@ router.get("/", async (request, response) => {
   response.json(allPosts)
 })
 
+router.get("/postById/:id", async (request, response) => {
+  const id = request.params.id
+  const post = await Posts.findByPk(id)
+  response.json(post)
+})
+
 router.get("/featuredPosts", async (request, response) => {
   const featuredPosts = await Posts.findAll({
     limit: 3,
