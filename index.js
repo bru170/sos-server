@@ -15,6 +15,9 @@ app.use("/posts", postRouter)
 const peopleRouter = require("./routes/People")
 app.use("/people", peopleRouter)
 
+const usersRouter = require("./routes/Users")
+app.use("/auth", usersRouter)
+
 db.sequelize.sync().then(() => {
   app.listen(3001, () => {
     console.log("Listening on port 3001")
