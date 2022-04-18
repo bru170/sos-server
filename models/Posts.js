@@ -16,14 +16,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING(1234),
       allowNull: false
     },
-    categories: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    tags: {
-      type: DataTypes.STRING(1234),
-      allowNull: false
-    },
     featureImage: {
       type: DataTypes.BLOB,
       allowNull: true
@@ -41,5 +33,12 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true
     }
   })
+
+  Posts.associate = (models) => {
+    Posts.hasMany(models.Categories, {
+      onDelete: "cascade"
+    })
+  }
+
   return Posts
 }
