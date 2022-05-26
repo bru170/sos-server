@@ -40,5 +40,11 @@ module.exports = (sequelize, DataTypes) => {
     })
   }
 
+  Posts.associate = (models) => {
+    Posts.hasMany(models.Categories, {
+      onDelete: "cascade"
+    })
+  }
+
   return Posts
 }

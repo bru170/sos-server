@@ -1,6 +1,7 @@
 const express = require("express")
 const router = express.Router()
 const {Posts} = require("../models")
+const {validateJWT} = require("../middleware/AuthMiddleware")
 
 router.get("/", async (request, response) => {
   const allPosts = await Posts.findAll({
@@ -23,8 +24,9 @@ router.get("/featuredPosts", async (request, response) => {
   response.json(featuredPosts)
 })
 
-router.post("/", async (request, response) => {
+router.post("/", validateJWT, async (request, response) => {
   const createPost = request.body
+  createPost.username = request.user.username
   await Posts.create(createPost)
   response.json(createPost)
 })
